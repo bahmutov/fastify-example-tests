@@ -1,8 +1,11 @@
 // make sure the IntelliSense works in this JavaScript spec file
+/// <reference types="Cypress" />
+
 it('shows some fruit', () => {
   // define baseUrl in cypress.json
   // set the convenient viewport in cypress.json
   // visit the page
+  cy.visit('/')
   // get the fruit element by ID
   // and confirm it does not have the loading text
   // and confirm it has the fruit name which is a word
@@ -10,4 +13,5 @@ it('shows some fruit', () => {
   // followed by all lowercase letters
   // alternative: use cy.contains with a regular expression
   // see https://on.cypress.io/contains
+  cy.contains('#fruit', /^[A-Z][a-z]+$/)
 })
