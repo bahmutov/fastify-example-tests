@@ -1,0 +1,16 @@
+{
+  "responses": {
+    "200": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "fruit": {
+            "type": "string",
+            "enum": ["Apples", "Bananas", "Grapes", "Pears"]
+          }
+        },
+        "required": ["fruit"]
+      }
+    }
+  }
+}
