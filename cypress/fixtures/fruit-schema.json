@@ -6,7 +6,13 @@
         "properties": {
           "fruit": {
             "type": "string",
-            "enum": ["Apples", "Bananas", "Grapes", "Pears"]
+            "enum": [
+              "Apples",
+              "Bananas",
+              "Grapes",
+              "Pears",
+              "Oranges"
+            ]
           }
         },
         "required": ["fruit"]
