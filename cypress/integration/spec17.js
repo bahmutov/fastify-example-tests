@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+// do not truncate longer objects in the assertions
 chai.config.truncateThreshold = 200
 
 it('requests the fruits N times', () => {
