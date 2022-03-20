@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Cypress tests to fill to check fastify-example application",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "format": "prettier --write '**/*.{js,json,md}'"
   },
   "keywords": [
     "cypress-examples"
