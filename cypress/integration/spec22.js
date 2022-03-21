@@ -13,4 +13,16 @@ it('uses cy.wait vs cy.get to access the intercept', () => {
   //
   // you can get the intercept again as many times as necessary
   // for example, use cy.get(alias) again to check the response status code
+
+  cy.intercept('GET', '/fruit').as('fruit')
+  cy.visit('/')
+  cy.wait('@fruit')
+
+  cy.contains('#fruit', /^[A-Z][a-z]+$/)
+    .invoke('text')
+    .then((fruit) =>
+      cy.get('@fruit').its('response.body.fruit').should('eq', fruit)
+    )
+
+  cy.get('@fruit').its('response').should('have.property', 'statusCode', 200)
 })

@@ -15,4 +15,24 @@ it('shows the network connection error', () => {
   // "error fetching fruit"
   //
   // confirm the page has an element with text "Failed to fetch"
+
+  cy.intercept(
+    {
+      method: 'GET',
+      url: '/fruit'
+    },
+    {
+      statusCode: 500
+    }
+  ).as('errorResponse')
+
+  cy.visit('/', {
+    onBeforeLoad(win) {
+      return cy.spy(win.console, 'error').as('logError')
+    }
+  })
+
+  cy.wait('@errorResponse')
+  cy.get('@logError').should('be.calledWith', 'error fetching fruit')
+  cy.contains('#fruit', 'HTTP error 500')
 })

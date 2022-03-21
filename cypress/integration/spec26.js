@@ -8,6 +8,14 @@ it('makes multiple separate requests', () => {
   // tip: use the ".then(callback)" to have both responses
   // https://on.cypress.io/then command
   // it will look like a pyramid of Doom of callbacks
+  cy.request('GET', '/fruit')
+    .its('body.fruit')
+    .then((fruit1) =>
+      cy
+        .request('GET', '/fruit')
+        .its('body.fruit')
+        .then((fruit2) => cy.wrap(fruit1).should('not.eq', fruit2))
+    )
 })
 
 it('store multiple responses as aliases', () => {
@@ -20,4 +28,18 @@ it('store multiple responses as aliases', () => {
   // to be able to access both fruits using
   // "this.fruit1" and "this.fruit2" variables
   // and confirm they are different
+
+  cy.request('GET', '/fruit').its('body.fruit').as('fruit1')
+  cy.request('GET', '/fruit').its('body.fruit').as('fruit2')
+
+  cy.then(function () {
+    cy.wrap(this.fruit1).should('not.eq', this.fruit2)
+  })
+})
+
+it('alternative solution ', () => {
+  cy.request('GET', '/fruit').its('body.fruit').as('fruit1')
+  cy.request('GET', '/fruit').its('body.fruit').as('fruit2')
+
+  cy.get('@fruit1').should('not.eq', cy.get('@fruit2'))
 })

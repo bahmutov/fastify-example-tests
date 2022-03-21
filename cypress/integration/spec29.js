@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+// TODO: look at this again after March 23rd
 it('hides server errors by returning stubbed response', () => {
   // intercept the GET /fruit call and
   // look at the server response
@@ -18,4 +19,28 @@ it('hides server errors by returning stubbed response', () => {
   // else
   //    the fruit from the server response
   //    should be visible
+
+  cy.intercept('GET', '/fruit').as('real')
+
+  cy.intercept(
+    {
+      method: 'GET',
+      url: '/fruit'
+    },
+    (req) =>
+      req.reply((res) => {
+        // if (res.statusCode !== 200) {
+        if (Math.random() < 0.5) {
+          return res.send({
+            statusCode: 201,
+            body: {
+              fruit: 'Mango'
+            }
+          })
+        }
+        return null
+      })
+  ).as('mango')
+
+  cy.visit('/')
 })

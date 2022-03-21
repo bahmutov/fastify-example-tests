@@ -2,8 +2,7 @@
 
 // install the NPM module openapi-response-validator as a dev dependency
 // import it in this spec file
-const OpenAPIResponseValidator =
-  require('openapi-response-validator').default
+const OpenAPIResponseValidator = require('openapi-response-validator').default
 // import the fruit schema from the fixture file "fruit-schema.json"
 const schema = require('../fixtures/fruit-schema.json')
 
@@ -21,24 +20,20 @@ beforeEach(() => {
     {
       method: 'GET',
       url: '/fruit',
-      middleware: true,
+      middleware: true
     },
     (req) => {
       req.continue((res) => {
-        const result = validator.validateResponse(
-          res.statusCode,
-          res.body,
-        )
+        const result = validator.validateResponse(res.statusCode, res.body)
+        console.log(result)
         if (result) {
           throw new Error(
-            JSON.stringify(result) +
-              '\n' +
-              JSON.stringify(res.body),
+            JSON.stringify(result) + '\n' + JSON.stringify(res.body)
           )
         }
       })
-    },
-  )
+    }
+  ).as('alias')
 })
 
 it('validates the server response using OpenAPI spec', () => {
@@ -46,5 +41,10 @@ it('validates the server response using OpenAPI spec', () => {
   cy.visit('/')
   // Note: make sure the page shows a fruit
   // otherwise the error in the intercept might be silently swallowed
-  cy.contains('#fruit', /^[A-Z]/)
+
+  Cypress._.times(5, () => {
+    cy.wait('@alias')
+    cy.contains('#fruit', /^[A-Z]/)
+    cy.reload()
+  })
 })
