@@ -16,7 +16,7 @@ it('finds all fruits', () => {
 // npm i -D cypress-recurse
 // and import or require it in this spec file
 // import { recurse } from 'cypress-recurse'
-it('finds all the fruit using recursion', () => {
+it('finds all the fruit using cypress-recurse', () => {
   // let's use the "recurse" function to reload the page
   // until we see a repeated fruit. Then we can stop
   // since we have seen all the fruits.
