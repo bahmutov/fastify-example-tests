@@ -3,7 +3,12 @@
 
 it('shows some fruit', () => {
   // define baseUrl in cypress.json
+  // (if not already set)
+  //
   // set the convenient viewport in cypress.json
+  // like viewportWidth: 400 and viewportHeight: 300
+  // (if not already set)
+  //
   // visit the page
   // https://on.cypress.io/visit
   //
