@@ -79,6 +79,8 @@ describe('using Cypress.env object to keep the data', () => {
   it('uses sale from Cypress.env object')
 })
 
+// install the plugin if necessary
+// npm i -D cypress-data-session
 // https://github.com/bahmutov/cypress-data-session
 // import 'cypress-data-session' module
 // which registers the cy.dataSession() command
