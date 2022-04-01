@@ -24,6 +24,20 @@ Should install all dependencies, including Cypress
 - Open the first test [spec01.js](./cypress/integration/spec01.js) and try implementing it following the comments
 - Watch the lesson that covers the `spec01.js` to see if your solution matches mine
 
+## Tests
+
+There are 45+ tests, to see them all use [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs)
+
+```
+$ npm run print
+...
+
+cypress/integration/spec30.js (1 test)
+└─ handles test flake using the test retries
+
+found 32 specs (46 tests, 8 pending)
+```
+
 ## Feedback
 
 These tests were set up by Gleb Bahmutov. If you have any feedback about these tests and the course, drop me an email

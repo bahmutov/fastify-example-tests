@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "cypress run",
-    "format": "prettier --write '**/*.{js,json,md}'"
+    "format": "prettier --write '**/*.{js,json,md}'",
+    "print": "find-cypress-specs --names"
   },
   "keywords": [
     "cypress-examples"
@@ -16,6 +17,7 @@
   "devDependencies": {
     "cypress": "^9.5.0",
     "cypress-data-session": "^2.0.0",
+    "find-cypress-specs": "^1.15.1",
     "openapi-response-validator": "^10.0.0",
     "prettier": "^2.5.1"
   }
