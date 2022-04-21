@@ -13,6 +13,10 @@ it('requests an image and gets its dimensions', () => {
   //
   // to parse the data URL and have an image element
   // use document.createElement and set the "src" attribute
+  // let the browser decode the image by sleeping 100ms
+  // https://on.cypress.io/wait
+  // and using .then callback with the assertion
+  //
   // from the image element, get the naturalHeight property
   // and confirm its value is 914 pixels
 })
