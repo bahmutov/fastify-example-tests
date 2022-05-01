@@ -5,6 +5,10 @@
 // https://on.cypress.io/request
 // The request.reply method stops the outgoing application request
 // and returns the mock request
+// The request.continue method continues the outgoing application
+// request letting it go to the server. You can optionally
+// modify the server's response before returning it to
+// the application
 describe('difference between req.reply and req.continue', () => {
   it('stubs the network call with the same object', () => {
     // mock the GET /fruit request and always return the same response
