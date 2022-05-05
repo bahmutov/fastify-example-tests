@@ -26,7 +26,7 @@ Should install all dependencies, including Cypress
 
 ## Tests
 
-There are 45+ tests, to see them all use [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs)
+There are 60+ tests, to see them all use [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs)
 
 ```
 $ npm run print
@@ -35,7 +35,7 @@ $ npm run print
 cypress/integration/spec30.js (1 test)
 └─ handles test flake using the test retries
 
-found 32 specs (46 tests, 8 pending)
+found 45 specs (63 tests, 8 pending)
 ```
 
 ## Feedback
