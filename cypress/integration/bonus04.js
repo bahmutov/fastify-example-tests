@@ -42,3 +42,32 @@ it('waits for all JavaScript bundles to load', () => {
   // then confirm the page contains the element
   // with ID "fruit" and the text sent by the server
 })
+
+// Bonus test: show that waiting for a resource that gets 404 doesn't
+// not fail the "cy.wait(alias)" command
+it('does not fail waiting for a resource that returns an error', () => {
+  // intercept the GET /old-bundle.js call and give it an alias "oldBundle"
+  // visit the "/bundles.html" page
+  //
+  // wait for the network call using the alias "oldBundle"
+  // The test should pass, even if the "old-bundle.js"
+  // call fails with http status 404
+  // in order to fail the test, we need to check the response status code
+  // to confirm it is 200-300 status code
+})
+
+// Alternative solution: check the response code of the network call
+it('fails a test if any JS resource fails to load', () => {
+  // intercept all GET requests to "*.js" resources
+  // provide a route handler callback function
+  // that continues going to the server and gets the response object
+  // if the response status code is 400 or higher
+  // the callback should throw an error, failing the test
+  // https://on.cypress.io/intercept
+  //
+  // visit the "/bundles.html" page
+  //
+  // Note: the test can finish before the network calls complete
+  // Read the blog post "When Can The Test Stop?"
+  // https://www.cypress.io/blog/2020/01/16/when-can-the-test-stop/
+})
