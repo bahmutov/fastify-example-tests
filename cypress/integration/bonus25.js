@@ -27,6 +27,10 @@ it('mocks the response by inspecting the request body', () => {
   // wait for the "@add" intercept
   // https://on.cypress.io/wait
   //
+  // because there is only a single intercept and
+  // we have waited for it, now we can get it again
+  // using the cy.get('@calculate') command
+  //
   // confirm the answer shown is correct
   // https://on.cypress.io/contains
 })
