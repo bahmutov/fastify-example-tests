@@ -17,6 +17,7 @@
   "devDependencies": {
     "cypress": "^9.7.0",
     "cypress-data-session": "^2.0.0",
+    "cypress-recurse": "^1.20.0",
     "find-cypress-specs": "^1.15.1",
     "openapi-response-validator": "^10.0.0",
     "prettier": "^2.5.1"
