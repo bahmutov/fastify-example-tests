@@ -6,7 +6,8 @@
 // for the same alias. What does the command yield?
 // Can you make it yield the status code? Or the intercept?
 // https://on.cypress.io/custom-commands
-Cypress.Commands.add('waitForSuccess', (alias) => {
+Cypress.Commands.add('waitForSuccess', (alias, n = 3) => {
+  // stop the test if we ran out of attempts "n"
   // write the code here
 })
 
