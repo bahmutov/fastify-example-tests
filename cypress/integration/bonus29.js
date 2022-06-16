@@ -20,7 +20,7 @@ beforeEach(() => {
 })
 
 it('waits for a successful message', () => {
-  // visit the page /unreliable.html
+  // visit the page /retries.html
   // https://on.cypress.io/visit
   //
   // confirm that it contains an element with id "result"
@@ -36,7 +36,7 @@ it('waits until a successful response using a custom command', () => {
   // https://on.cypress.io/intercept
   // https://on.cypress.io/as
   //
-  // visit the page /unreliable.html
+  // visit the page /retries.html
   // https://on.cypress.io/visit
   //
   // call the custom command waitForSuccess
