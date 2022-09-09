@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-wait-if-happens" />
+// @ts-check
 
 // https://github.com/bahmutov/cypress-wait-if-happens
 import 'cypress-wait-if-happens'
@@ -39,8 +40,8 @@ it('waits for the last network call using cypress-wait-if-happens', () => {
   // how do you confirm the /track request was made
   // with event name "+" and your input arguments?
   // you probably will randomly get _other_ track event calls before...
-  cy.get('#num1').type(20)
-  cy.get('#num2').type(6)
+  cy.get('#num1').type('20')
+  cy.get('#num2').type('6')
   cy.get('#add').click()
   // confirm the call as made by looking at the page
   // and finding the displayed answer 26
