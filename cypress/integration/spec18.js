@@ -10,7 +10,7 @@ it('does not intercept the requests made using cy.request', () => {
 
 it('catches the request made by the test using fetch', () => {
   // The test itself can use the "fetch" to make network calls
-  // Use "fetch" instead ot request to make a network call
+  // Use "fetch" instead of request to make a network call
   // and confirm that cy.intercept does "see" the network call
   //
   // set up the intercept
