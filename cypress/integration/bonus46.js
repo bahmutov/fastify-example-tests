@@ -13,7 +13,7 @@ it.skip('successfully completes every network request', () => {
       ])
     })
   })
-  // visit the page "/bundles" and see if the test fails
+  // visit the page "/bundles.html" and see if the test fails
   // https://on.cypress.io/visit
-  cy.visit('/bundles')
+  cy.visit('/bundles.html')
 })
