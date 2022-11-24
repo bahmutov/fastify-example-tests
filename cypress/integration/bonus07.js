@@ -25,7 +25,8 @@ it('checks the image load timing', () => {
 })
 
 it('slows down the image load', () => {
-  // intercept the GET /tiger request and slow it down by 2 seconds
+  // intercept the "GET /tiger.png" request
+  // and slow it down by 2 seconds
   // (see the spec10 lesson)
   // https://on.cypress.io/intercept
   //
