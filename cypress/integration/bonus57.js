@@ -20,6 +20,17 @@ it(
     // https://on.cypress.io/get
     // https://on.cypress.io/first
     // https://on.cypress.io/within
+    //
+    // submit the upload form
+    // https://on.cypress.io/submit
+    //
+    // confirm the uploaded files page URL
+    // https://on.cypress.io/location
+    //
+    // validate the displayed page
+    // - the heading
+    // - two JSON files
+    // you can validate the contents of the files
   },
 )
 
