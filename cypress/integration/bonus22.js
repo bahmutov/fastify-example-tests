@@ -22,7 +22,7 @@ describe('Server-Side Events', () => {
 
   it('stubs SSE', () => {
     // the SSE events sent by the server use a special
-    // text format, as describe in the Mozilla docs
+    // text format, as described in the Mozilla docs
     // https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
     // Intercept the GET /fruits-sse endpoint and reply with
     // a stubbed text response mimicking the real response

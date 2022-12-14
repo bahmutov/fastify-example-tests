@@ -8,7 +8,9 @@ it('mocks the response by inspecting the request body', () => {
   // https://on.cypress.io/intercept
   // from the reply, grab the body's "operation" property
   // If it is equal to "+" then assign the request alias "add"
-  // and reply with the sub of the request body's "a" and "b"
+  // and reply with the stub:
+  // take the same object as the request body
+  // and compute the answer by adding a and b
   //
   // give the intercept alias "calculate"
   // https://on.cypress.io/as
