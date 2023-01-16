@@ -4,3 +4,4 @@ cypress/videos/
 response.json
 cypress/downloads/
 .DS_Store
+network-calls.json
