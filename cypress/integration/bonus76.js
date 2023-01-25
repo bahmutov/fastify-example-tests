@@ -5,17 +5,6 @@
 // and attach it to every GET and POST network call
 // made by the application. Use the request header name "x-test-id"
 // https://on.cypress.io/intercept
-beforeEach(() => {
-  const randomId = 'test-id-' + Cypress._.random(1e6)
-  cy.intercept(
-    {
-      method: /GET|POST/,
-    },
-    (req) => {
-      req.headers['x-test-id'] = randomId
-    },
-  )
-})
 
 it('sends common X request id header on all network calls', () => {
   // observe the terminal output from the fastify-example server
