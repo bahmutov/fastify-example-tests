@@ -19,3 +19,13 @@ it('measures the total size of the page and its resources', () => {
   // and add them all up
   // confirm the total page size is below 1MB
 })
+
+// a lesson from "Cypress Plugins" course
+it('Bonus: disable network caching via CDP', () => {
+  // https://github.com/bahmutov/cypress-cdp
+  // use the cy.CDP command to disable the network caching
+  // https://chromedevtools.github.io/devtools-protocol/tot/Network/#method-setCacheDisabled
+  //
+  cy.visit('/tiger.html')
+  // confirm the total page size is below 1MB
+})
