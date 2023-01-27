@@ -16,3 +16,33 @@ it('sends common X request id header on all network calls', () => {
   cy.contains('+').click()
   cy.contains('#answer', '15')
 })
+
+it('Bonus: overwrites cy.request to always send the custom header', () => {
+  // Bonus: overwrite the cy.request command
+  // assume we always call cy.request with an options object
+  // like cy.request(options)
+  // add to each options object the header "x-test-id"
+  cy.visit('/calculator.html')
+  cy.get('#num1').type('10')
+  cy.get('#num2').type('5')
+  cy.contains('+').click()
+  cy.contains('#answer', '15')
+  // Make the call from the test without setting a custom header "x-test-id"
+  // Do you see it in your server terminal output?
+  cy.request({
+    method: 'POST',
+    url: '/calculate',
+    body: {
+      a: 20,
+      b: 30,
+      operation: '-',
+    },
+  })
+    .its('body')
+    .should('deep.equal', {
+      a: 20,
+      b: 30,
+      operation: '-',
+      answer: -10,
+    })
+})
