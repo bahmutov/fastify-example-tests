@@ -23,3 +23,19 @@ it('checks the intercepts until it gets the right response', () => {
   // the page is showing 7 immediately
   // which we can verify using cy.contains with a very short timeout
 })
+
+// Bonus solution
+it('Alternative: use a single cy.wait', () => {
+  // we can set up an intercept
+  cy.intercept('GET', '/random-digit').as('random')
+  // visit the page
+  cy.visit('/lucky7.html')
+  // use "recurse" to wait for the "GET /random-digit"
+  // network call and yield the response from the server
+  // Our predicate should return true when the server
+  // returns n = 7
+  //
+  // once we have confirmed the network call with "n: 7",
+  // the page is showing 7 immediately
+  // which we can verify using cy.contains with a very short timeout
+})
