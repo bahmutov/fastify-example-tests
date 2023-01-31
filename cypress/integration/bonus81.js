@@ -17,7 +17,7 @@ describe('CSRF protection via cookie', () => {
     // submit the form by clicking on the Register button
     // https://on.cypress.io/click
     //
-    // confirm the new page is at url "/submit-csrf-form"
+    // confirm the new page is at url "/submit-csrf-form-cookie"
     //
     // confirm the page shows the submitted username
     // https://on.cypress.io/contains
