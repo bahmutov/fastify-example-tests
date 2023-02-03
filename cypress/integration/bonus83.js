@@ -15,7 +15,7 @@ beforeEach(() => {
 })
 
 // enable the test to see it fail
-it.skip('successfully completes every network request', () => {
+it('successfully completes every network request', () => {
   // visit the page "/bundles.html" and see if the test fails
   // https://on.cypress.io/visit
   cy.visit('/bundles.html')
