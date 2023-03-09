@@ -26,7 +26,7 @@ Should install all dependencies, including Cypress
 
 ## Tests
 
-There are 60+ tests, to see them all use [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs)
+There are 180+ tests, to see them all use [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs)
 
 ```
 $ npm run print
@@ -35,9 +35,13 @@ $ npm run print
 cypress/integration/spec30.js (1 test)
 └─ handles test flake using the test retries
 
-found 45 specs (63 tests, 8 pending)
+found 116 specs (180 tests, 13 pending)
 ```
+
+### Tests after bonus91
+
+The new bonus lessons starting with "bonus 92" are written using Cypress v12+ and are placed in the repo [bahmutov/fastify-example-tests-new](https://github.com/bahmutov/fastify-example-tests-new).
 
 ## Feedback
 
-These tests were set up by Gleb Bahmutov. If you have any feedback about these tests and the course, drop me an email
+These tests were set up by Gleb Bahmutov. If you have any feedback about these tests and the course, drop me an email or open an issue / comment at [bahmutov/cypress-courses](https://github.com/bahmutov/cypress-courses).
